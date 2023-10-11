@@ -22,16 +22,16 @@ export const PostLayout = ({
 }: PostLayoutProps) => {
   return (
     <div className={clsx("flex w-full flex-row items-start p-4", className)}>
-      <Avatar>
+      <Avatar size="default">
         {user.image ? <AvatarImage src={user.image} alt="user avatar" /> : null}
         <AvatarFallback>
           {user.username?.slice(0, 2).toUpperCase()}
         </AvatarFallback>
       </Avatar>
-      <div className="ml-4 flex w-full flex-col gap-2">
+      <div className="flex flex-col w-full gap-2 ml-4">
         <Link href={`/users/${user.id}`}>
-          <div className="flex flex-row item-center gap-2">
-            <p className="text-sm text-card-foreground mr-auto">
+          <div className="flex flex-row gap-2 item-center">
+            <p className="mr-auto text-sm text-card-foreground">
               {user.username}
             </p>
             {createdAt ? (
